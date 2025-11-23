@@ -1,18 +1,7 @@
 {
-  "buildCommand": null,
-  "installCommand": null,
-  "outputDirectory": "marketing-site",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
-    { "source": "/terms", "destination": "/terms-and-conditions.html" },
-    { "source": "/refund-policy", "destination": "/refund-and-cancellation.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/pricing", "destination": "/pricing.html" },
-    { "source": "/contact", "destination": "/contact-us.html" }
-  ],
-  "git": {
-    "deploymentEnabled": {
-      "marketing": true
-    }
-  }
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
