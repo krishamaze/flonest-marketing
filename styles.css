@@ -240,6 +240,7 @@ nav a.active {
 
 .cta-button:hover {
     background: var(--color-primary-hover);
+    color: var(--text-on-primary);  /* ensure text remains visible */
     transform: translateY(-2px);
     box-shadow: var(--shadow-primary);
 }
