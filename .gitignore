@@ -67,6 +67,12 @@ coverage/
 *.test.js.snap
 .vitest/
 
+# Playwright (local testing only - NEVER commit)
+tests/
+test-results/
+playwright-report/
+playwright/.cache/
+
 # Temporary files
 *.tmp
 *.temp
