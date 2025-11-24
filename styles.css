@@ -140,6 +140,10 @@ header {
     color: var(--text-on-dark);
     padding: var(--spacing-md) max(var(--spacing-lg), env(safe-area-inset-right)) var(--spacing-md) max(var(--spacing-lg), env(safe-area-inset-left));
     box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 nav {
@@ -154,15 +158,33 @@ nav {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
+    flex-shrink: 0;
 }
 
-nav ul {
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+}
+
+.nav-menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-menu ul {
     list-style: none;
     display: flex;
     gap: var(--spacing-lg);
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
+.nav-menu a {
     color: var(--text-on-dark);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
@@ -170,11 +192,11 @@ nav a {
     display: inline-block;
 }
 
-nav a:hover {
+.nav-menu a:hover {
     color: var(--color-primary);
 }
 
-nav a.active {
+.nav-menu a.active {
     color: var(--color-primary);
 }
 
@@ -627,13 +649,94 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-cta {
+    /* Hide desktop nav, show hamburger */
+    .nav-menu ul {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-secondary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        box-shadow: var(--shadow-md);
     }
 
-    nav ul {
-        gap: var(--spacing-sm);
-        font-size: var(--font-size-sm);
+    .nav-menu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: var(--spacing-md) var(--spacing-lg);
+        width: 100%;
+    }
+
+    .nav-cta {
+        background: transparent !important;
+        color: var(--color-primary) !important;
+        border: 1px solid var(--color-primary) !important;
+        margin: var(--spacing-sm) var(--spacing-lg);
+        text-align: center;
+        display: block !important;
+    }
+
+    /* Hamburger icon */
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+        width: 28px;
+        height: 22px;
+        position: relative;
+        z-index: 100;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: var(--text-on-dark);
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle-label span {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-toggle-label span::before {
+        content: "";
+        top: -8px;
+    }
+
+    .nav-toggle-label span::after {
+        content: "";
+        top: 8px;
+    }
+
+    /* Animate hamburger to X when checked */
+    .nav-toggle:checked + .nav-toggle-label span {
+        background: transparent;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    /* Show menu when checked */
+    .nav-toggle:checked ~ .nav-menu ul {
+        display: flex;
     }
     
     .hero h1 {
@@ -675,29 +778,8 @@ footer {
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: var(--spacing-sm) max(var(--spacing-md), env(safe-area-inset-right)) var(--spacing-sm) max(var(--spacing-md), env(safe-area-inset-left));
-    }
-
     .logo {
         font-size: var(--font-size-base);
-        flex-shrink: 0;
-    }
-
-    nav {
-        gap: var(--spacing-xs);
-    }
-
-    nav ul {
-        gap: 2px;
-        font-size: 11px;
-        flex-wrap: nowrap;
-    }
-
-    nav a {
-        padding: 12px 5px;
-        white-space: nowrap;
-        font-weight: var(--font-weight-normal);
     }
 
     .hero {
