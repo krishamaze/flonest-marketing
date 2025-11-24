@@ -138,7 +138,7 @@ a:hover {
 header {
     background: var(--color-secondary);
     color: var(--text-on-dark);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-md) max(var(--spacing-lg), env(safe-area-inset-right)) var(--spacing-md) max(var(--spacing-lg), env(safe-area-inset-left));
     box-shadow: var(--shadow-md);
 }
 
@@ -178,6 +178,23 @@ nav a.active {
     color: var(--color-primary);
 }
 
+/* Navbar CTA */
+.nav-cta {
+    background: var(--color-primary) !important;
+    color: var(--text-on-primary) !important;
+    padding: 8px 16px !important;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-fast);
+}
+
+.nav-cta:hover {
+    background: var(--color-primary-hover) !important;
+    color: var(--text-on-primary) !important;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-primary);
+}
+
 /* Hero Section */
 .hero {
     background: var(--color-secondary);
@@ -201,6 +218,13 @@ nav a.active {
     margin-bottom: var(--spacing-xl);
     opacity: 0.95;
     line-height: var(--line-height-relaxed);
+}
+
+.subtagline {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
 }
 
 /* Page Header (for internal pages) */
@@ -603,6 +627,10 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-cta {
+        display: none;
+    }
+
     nav ul {
         gap: var(--spacing-sm);
         font-size: var(--font-size-sm);
@@ -647,19 +675,51 @@ footer {
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: var(--spacing-sm) max(var(--spacing-md), env(safe-area-inset-right)) var(--spacing-sm) max(var(--spacing-md), env(safe-area-inset-left));
+    }
+
     .logo {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-base);
+        flex-shrink: 0;
     }
-    
-    nav ul {
+
+    nav {
         gap: var(--spacing-xs);
-        font-size: var(--font-size-xs);
     }
-    
+
+    nav ul {
+        gap: 2px;
+        font-size: 11px;
+        flex-wrap: nowrap;
+    }
+
+    nav a {
+        padding: 12px 5px;
+        white-space: nowrap;
+        font-weight: var(--font-weight-normal);
+    }
+
     .hero {
-        padding: var(--spacing-2xl) var(--spacing-md);
+        padding: var(--spacing-lg) var(--spacing-md);
     }
-    
+
+    .hero h1 {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero p {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .subtagline {
+        font-size: var(--font-size-xs);
+        margin-top: 0;
+        margin-bottom: var(--spacing-md);
+    }
+
     .page-header {
         padding: var(--spacing-xl) var(--spacing-md);
     }
