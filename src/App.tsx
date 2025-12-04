@@ -18,7 +18,6 @@ import Policies from "@/pages/Policies";
 import NotFound from "@/pages/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import HoverReceiver from "@/visual-edits/VisualEditsMessenger";
 
 const queryClient = new QueryClient();
 
@@ -63,7 +62,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <SonnerToaster />
-      <HoverReceiver />
       <BrowserRouter>
         <ScrollToTop />
         <HeaderVisibilityProvider>
