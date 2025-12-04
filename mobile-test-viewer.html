@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flonest Mobile Responsive Test Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1F2937;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #6B7280;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        select, button {
+            padding: 8px 16px;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button {
+            background: #E2C33D;
+            color: #1F2937;
+            border: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #d4b635;
+        }
+
+        .device-info {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #E2C33D;
+            color: #1F2937;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .viewer-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 600px;
+        }
+
+        .device-frame {
+            background: #1F2937;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .device-screen {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        iframe {
+            border: none;
+            display: block;
+            background: white;
+        }
+
+        .orientation-toggle {
+            margin-left: auto;
+        }
+
+        .test-checklist {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .test-checklist h2 {
+            color: #1F2937;
+            margin-bottom: 15px;
+        }
+
+        .test-checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .test-checklist li {
+            padding: 8px 0;
+            color: #374151;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .test-checklist li:before {
+            content: "☐ ";
+            color: #E2C33D;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Flonest Mobile Responsive Test Viewer</h1>
+            <p class="description">Interactive mobile device emulation for testing responsive design</p>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="device-select">Device:</label>
+                    <select id="device-select">
+                        <option value="320,568">iPhone SE (320×568)</option>
+                        <option value="360,800">Samsung S21 (360×800)</option>
+                        <option value="375,667" selected>iPhone SE (375×667)</option>
+                        <option value="390,844">iPhone 14 (390×844)</option>
+                        <option value="414,896">iPhone 14 Pro Max (414×896)</option>
+                        <option value="768,1024">iPad (768×1024)</option>
+                        <option value="1024,768">iPad Landscape (1024×768)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <button id="rotate-btn" class="orientation-toggle">🔄 Rotate</button>
+                </div>
+
+                <div class="control-group">
+                    <button id="reload-btn">↻ Reload</button>
+                </div>
+
+                <div class="device-info" id="device-info">375 × 667</div>
+            </div>
+        </div>
+
+        <div class="viewer-container">
+            <div class="device-frame" id="device-frame">
+                <div class="device-screen">
+                    <iframe id="preview-frame" src="index.html"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-checklist">
+            <h2>📋 Mobile Testing Checklist</h2>
+            <ul>
+                <li>Mobile navigation menu (hamburger menu) opens and closes correctly</li>
+                <li>All navigation links are accessible when menu is open</li>
+                <li>Touch targets (buttons, links) are at least 44×44px</li>
+                <li>No horizontal scrolling occurs on any viewport width</li>
+                <li>Hero section displays correctly with readable text</li>
+                <li>Feature cards stack vertically and are readable</li>
+                <li>CTA buttons are prominent and easily tappable</li>
+                <li>Images and icons scale appropriately</li>
+                <li>Footer content is readable and properly formatted</li>
+                <li>Business information section displays without overflow</li>
+                <li>All text meets minimum font size requirements (12px+)</li>
+                <li>Layout adapts correctly when rotating device</li>
+                <li>Forms and inputs are usable on mobile</li>
+                <li>Links and buttons have adequate spacing</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const deviceSelect = document.getElementById('device-select');
+        const rotateBtn = document.getElementById('rotate-btn');
+        const reloadBtn = document.getElementById('reload-btn');
+        const deviceInfo = document.getElementById('device-info');
+        const deviceFrame = document.getElementById('device-frame');
+        const previewFrame = document.getElementById('preview-frame');
+
+        let currentWidth, currentHeight;
+
+        function updateDevice() {
+            const [width, height] = deviceSelect.value.split(',').map(Number);
+            currentWidth = width;
+            currentHeight = height;
+            applyDimensions();
+        }
+
+        function applyDimensions() {
+            previewFrame.style.width = currentWidth + 'px';
+            previewFrame.style.height = currentHeight + 'px';
+            deviceInfo.textContent = `${currentWidth} × ${currentHeight}`;
+        }
+
+        function rotateDevice() {
+            [currentWidth, currentHeight] = [currentHeight, currentWidth];
+            applyDimensions();
+        }
+
+        function reloadFrame() {
+            previewFrame.src = previewFrame.src;
+        }
+
+        deviceSelect.addEventListener('change', updateDevice);
+        rotateBtn.addEventListener('click', rotateDevice);
+        reloadBtn.addEventListener('click', reloadFrame);
+
+        // Initialize
+        updateDevice();
+    </script>
+</body>
+</html>
+

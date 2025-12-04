@@ -1,2 +1,2 @@
-# flow-nest-orchestrator-1
-Project from Orchids.app - flow-nest-orchestrator
+Static marketing site for flonest – deployed via Vercel.
+Do not put app code here.

@@ -1,0 +1,25 @@
+{
+  "static_only": true,
+  "allowed_currency": ["INR", "₹"],
+  "banned_keywords": ["payNow(", "Stripe", "Razorpay", "checkout"],
+  "required_sections": [
+    "HEADER",
+    "PAGE-HEADER",
+    "PRICING-GRID",
+    "FOOTER"
+  ],
+  "required_footer_content": [
+    "GSTIN",
+    "Registered",
+    "Address"
+  ],
+  "required_card_selectors": [
+    ".pricing-card__title",
+    ".pricing-card__subtitle",
+    ".pricing-card__price",
+    ".pricing-card__features",
+    ".pricing-card__note",
+    ".pricing-card__cta"
+  ]
+}
+
