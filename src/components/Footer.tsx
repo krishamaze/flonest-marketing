@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground h-full relative overflow-hidden">
       {/* Large watermark - absolutely positioned at bottom */}
-      <div 
+      <div
         className="absolute bottom-0 left-0 right-0 flex items-end justify-center pointer-events-none"
         aria-hidden="true"
       >
@@ -19,7 +19,7 @@ const Footer = () => {
       {/* Main content area - positioned above watermark */}
       <div className="relative z-10 max-w-7xl mx-auto w-full h-full px-5 md:px-8 pt-8 md:pt-14 pb-6 flex flex-col">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 md:gap-10 lg:gap-16">
-          
+
           {/* Brand section */}
           <div className="lg:max-w-sm shrink-0">
             <div className="text-xl md:text-2xl font-bold tracking-tight mb-2 md:mb-3 text-secondary-foreground">FLONEST</div>
@@ -31,14 +31,14 @@ const Footer = () => {
 
           {/* Link columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-x-12 gap-y-6 md:gap-y-6 border border-secondary-foreground/10 rounded-2xl p-5 md:p-6 bg-secondary-foreground/5 backdrop-blur-sm">
-            
+
             <nav aria-label="Product links">
               <h4 className="text-sm md:text-base font-semibold mb-3 md:mb-4 text-secondary-foreground tracking-wide uppercase">Product</h4>
               <ul className="space-y-2.5 md:space-y-3">
                 <li><Link to="/pricing" className={linkClasses}>Pricing</Link></li>
                 <li>
-                  <a 
-                    href="https://bill.finetune.store/login" 
+                  <a
+                    href="https://bill.flonest.app/login"
                     className={`${linkClasses} inline-flex items-center gap-1.5`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -48,8 +48,8 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://bill.finetune.store/login?view=sign_up" 
+                  <a
+                    href="https://bill.flonest.app/login?view=sign_up"
                     className={`${linkClasses} inline-flex items-center gap-1.5`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -85,8 +85,8 @@ const Footer = () => {
               <h4 className="text-sm md:text-base font-semibold mb-3 md:mb-4 text-secondary-foreground tracking-wide uppercase">Connect</h4>
               <ul className="space-y-2.5 md:space-y-3">
                 <li>
-                  <a 
-                    href="mailto:support@flonest.app" 
+                  <a
+                    href="mailto:support@flonest.app"
                     className={`${linkClasses} inline-flex items-center gap-1.5`}
                   >
                     <Mail className="w-4 h-4 opacity-70" aria-hidden="true" />

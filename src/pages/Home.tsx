@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <SectionScroller sections={sections} duration={700}>
       <HeaderVisibilitySync />
-      
+
       {/* Hero Section */}
       <Section index={0} id="hero">
         <div className="w-full h-full bg-secondary text-secondary-foreground flex items-center justify-center px-6 pt-16">
@@ -61,7 +61,7 @@ const Home = () => {
               Built for retail businesses — from single stores to multi-branch chains.
             </p>
             <a
-              href="https://bill.finetune.store/login?view=sign_up"
+              href="https://bill.flonest.app/login?view=sign_up"
               className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 md:px-8 md:py-4 rounded-full text-base font-semibold transition-all duration-300 hover:bg-primary/90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 animate-fade-in [animation-delay:400ms]"
               aria-label="Get started with Flonest"
             >
@@ -83,7 +83,7 @@ const Home = () => {
               One Platform. Complete Control.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in [animation-delay:200ms]">
-              Flonest combines ERP, asset rentals, and digital tools into a single ecosystem — 
+              Flonest combines ERP, asset rentals, and digital tools into a single ecosystem —
               so you can focus on growing your business, not managing software.
             </p>
           </div>
@@ -102,7 +102,7 @@ const Home = () => {
                 Built for Modern Retail
               </h2>
             </div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {features.map((feature, index) => (
                 <article
@@ -137,7 +137,7 @@ const Home = () => {
               E-Commerce Ready
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms]">
-              Enable online sales with stock sync & digital payments. 
+              Enable online sales with stock sync & digital payments.
               Your physical and online stores, perfectly in sync.
             </p>
             <Link
@@ -166,7 +166,7 @@ const Home = () => {
               Join businesses that trust Flonest for their retail management.
             </p>
             <a
-              href="https://bill.finetune.store/login?view=sign_up"
+              href="https://bill.flonest.app/login?view=sign_up"
               className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:bg-primary/90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 animate-fade-in [animation-delay:300ms]"
               aria-label="Start using Flonest for free"
             >

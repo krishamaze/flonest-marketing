@@ -65,7 +65,7 @@ const About = () => {
           </p>
           <div className="flex gap-4 justify-center flex-wrap animate-fade-in [animation-delay:300ms]">
             <a
-              href="https://bill.finetune.store/login?view=sign_up"
+              href="https://bill.flonest.app/login?view=sign_up"
               className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-primary/90 hover:shadow-lg"
             >
               Get started free
