@@ -2,27 +2,27 @@ import { Link } from "react-router-dom";
 import { FileText, Shield, RefreshCw, Truck, ArrowRight } from "lucide-react";
 
 const policies = [
-  { 
-    title: "Terms & Conditions", 
-    href: "/terms-and-conditions", 
+  {
+    title: "Terms & Conditions",
+    href: "/terms-and-conditions",
     description: "Our terms of service and usage agreement",
     icon: FileText,
   },
-  { 
-    title: "Privacy Policy", 
-    href: "/privacy-policy", 
+  {
+    title: "Privacy Policy",
+    href: "/privacy-policy",
     description: "How we collect, use, and protect your data",
     icon: Shield,
   },
-  { 
-    title: "Refund & Cancellation", 
-    href: "/refund-and-cancellation", 
+  {
+    title: "Refund & Cancellation",
+    href: "/refund-and-cancellation",
     description: "Our refund and cancellation policies",
     icon: RefreshCw,
   },
-  { 
-    title: "Service Delivery", 
-    href: "/shipping-policy", 
+  {
+    title: "Service Delivery",
+    href: "/shipping-policy",
     description: "Information about service delivery and activation",
     icon: Truck,
   },
@@ -30,7 +30,7 @@ const policies = [
 
 const Policies = () => {
   return (
-    <div className="min-h-[calc(100vh-64px)]">
+    <div className="min-h-page">
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">

@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
-import { HeaderVisibilityProvider } from "@/contexts/HeaderVisibilityContext";
+import { HeaderVisibilityProvider, useHeaderVisibility } from "@/contexts/HeaderVisibilityContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -24,6 +25,14 @@ const queryClient = new QueryClient();
 function AppLayout() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const { setHeaderHidden } = useHeaderVisibility();
+
+  // Reset header visibility when navigating away from home page
+  useEffect(() => {
+    if (!isHomePage) {
+      setHeaderHidden(false);
+    }
+  }, [isHomePage, setHeaderHidden]);
 
   // Homepage uses fullpage scroll (handled by SectionScroller)
   // Other pages use normal scrolling

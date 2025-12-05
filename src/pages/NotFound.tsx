@@ -3,7 +3,7 @@ import { Home } from "lucide-react";
 
 const NotFound = () => {
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center px-6 bg-background">
+    <div className="min-h-page flex items-center justify-center px-6 bg-background">
       <div className="text-center max-w-md">
         <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase animate-fade-in">
           Error 404
