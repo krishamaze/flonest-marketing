@@ -28,7 +28,8 @@ export default function WhatsAppWidget() {
       {/* Floating WhatsApp Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-5 right-5 z-50 w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        className="fixed z-50 w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform right-5 bottom-5"
+        style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Open WhatsApp chat"
@@ -60,7 +61,8 @@ export default function WhatsAppWidget() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 100, scale: 0.9 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed bottom-5 right-5 z-50 w-[300px] max-w-[calc(100vw-40px)] rounded-2xl overflow-hidden shadow-2xl"
+              className="fixed right-5 z-50 w-[300px] max-w-[calc(100vw-40px)] rounded-2xl overflow-hidden shadow-2xl"
+              style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
             >
               {/* Phone Frame */}
               <div className="bg-[#111B21] rounded-2xl overflow-hidden border-[3px] border-[#2A3942]">
@@ -84,7 +86,7 @@ export default function WhatsAppWidget() {
                 </div>
 
                 {/* Chat Area */}
-                <div 
+                <div
                   className="h-52 px-3 py-4 flex flex-col justify-end"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23182229' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,

@@ -242,6 +242,12 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Page content min-height: viewport minus fixed header */
+  .min-h-page {
+    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100dvh - var(--header-height));
+  }
 }
 
 /* Animation Keyframes */

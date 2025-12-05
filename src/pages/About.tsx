@@ -50,7 +50,7 @@ const capabilities = [
 
 const About = () => {
   return (
-    <div className="min-h-[calc(100vh-64px)]">
+    <div className="min-h-page">
       {/* Hero Section */}
       <section className="bg-secondary text-secondary-foreground py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">

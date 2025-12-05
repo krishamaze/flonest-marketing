@@ -22,7 +22,7 @@ const includedFeatures = [
 
 const Pricing = () => {
   return (
-    <div className="min-h-[calc(100vh-64px)]">
+    <div className="min-h-page">
       {/* Hero Section */}
       <section className="bg-secondary text-secondary-foreground py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">
@@ -54,7 +54,7 @@ const Pricing = () => {
                 <h2 className="text-xl font-semibold text-foreground mb-1">{card.title}</h2>
                 <p className="text-muted-foreground text-sm">{card.subtitle}</p>
               </div>
-              
+
               {/* Price */}
               <div className="text-center mb-6">
                 <div className="inline-flex items-baseline gap-1">
@@ -65,7 +65,7 @@ const Pricing = () => {
                   <p className="text-xs text-muted-foreground mt-2">{card.note}</p>
                 )}
               </div>
-              
+
               {/* Features */}
               <ul className="space-y-3 mb-8">
                 {card.features.map((feature, idx) => (
@@ -77,7 +77,7 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              
+
               {/* CTA */}
               <Link
                 to="/contact"
@@ -86,7 +86,7 @@ const Pricing = () => {
                 Start Free Trial
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              
+
               <p className="text-center text-xs text-muted-foreground mt-4">
                 No credit card required • Cancel anytime
               </p>
@@ -106,7 +106,7 @@ const Pricing = () => {
               All features. No upsells.
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             {includedFeatures.map((feature, index) => (
               <div

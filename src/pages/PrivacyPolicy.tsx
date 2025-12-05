@@ -19,7 +19,7 @@ const contentSections = [
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-[calc(100vh-64px)]">
+    <div className="min-h-page">
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">
@@ -48,13 +48,13 @@ const PrivacyPolicy = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">{section.content}</p>
               </div>
             ))}
-            
+
             <div className="pt-6 border-t border-border/50">
               <h2 className="text-lg font-semibold mb-3 text-foreground">Contact Us</h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 For privacy-related inquiries, email us at{" "}
-                <a 
-                  href="mailto:support@flonest.app" 
+                <a
+                  href="mailto:support@flonest.app"
                   className="text-primary hover:underline transition-colors duration-200"
                 >
                   support@flonest.app

@@ -2,7 +2,7 @@ import { Mail } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="min-h-[calc(100vh-64px)]">
+    <div className="min-h-page">
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">
