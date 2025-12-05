@@ -301,3 +301,40 @@
     @apply outline-2 outline-offset-2 outline-primary/50 rounded-sm;
   }
 }
+/* Container Query Utilities (2025 Standard) */
+@layer utilities {
+  .container-inline {
+    container-type: inline-size;
+  }
+
+  .container-size {
+    container-type: size;
+  }
+}
+
+/* Container Query Responsive Rules */
+@container (min-width: 400px) {
+  .cq\:flex-row {
+    flex-direction: row;
+  }
+  
+  .cq\:p-6 {
+    padding: 1.5rem;
+  }
+  
+  .cq\:gap-6 {
+    gap: 1.5rem;
+  }
+}
+
+@container (min-width: 600px) {
+  .cq\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 900px) {
+  .cq\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -103,7 +103,7 @@ const Home = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="container-inline grid grid-cols-2 cq:grid-cols-3 gap-4 cq:gap-6">
               {features.map((feature, index) => (
                 <article
                   key={index}
